@@ -2,18 +2,18 @@ import { sign } from 'jsonwebtoken';
 
 import authConfig from '../config/auth';
 
-interface Request {
+interface IAuth {
   email: string;
   password: string;
 }
 
-interface Response {
+interface IResponse {
   email: string;
   token: string;
 }
 
 class AuthenticateUserService {
-  public async execute({ email, password }: Request): Promise<Response> {
+  public async execute({ email, password }: IAuth): Promise<IResponse> {
     // valida se usuario esta correto
     if (email !== 'gustavo@teste.com' || password !== '123456') {
       throw new Error('Incorrect email/password combination');
