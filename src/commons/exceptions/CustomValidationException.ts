@@ -1,5 +1,5 @@
 import { ValidationErrorItem } from 'joi';
-import httpCodes from '../enum/http-codes';
+import httpCodes from 'commons/enum/http-codes';
 import CustomException from './CustomException';
 
 export default class CustomValidationException extends CustomException {

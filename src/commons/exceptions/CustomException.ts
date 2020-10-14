@@ -1,7 +1,9 @@
-export default class CustomException extends Error {
-  public code: number;
+import { ValidationErrorItem } from 'joi';
 
-  public details?: any[];
+export default class CustomException extends Error {
+  public readonly code: number;
+
+  public readonly details?: ValidationErrorItem[];
 
   constructor(message: string, code: number) {
     super(message);

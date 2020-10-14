@@ -1,7 +1,7 @@
 import { NextFunction } from 'express';
 import { Schema } from 'joi';
-import { CustomRequest, CustomResponse } from '../interfaces';
-import CustomValidationException from '../exceptions/CustomValidationException';
+import { CustomRequest, CustomResponse } from 'commons/interfaces';
+import CustomValidationException from 'commons/exceptions/CustomValidationException';
 
 export default (schema: Schema) => (
   req: CustomRequest,
@@ -21,6 +21,8 @@ export default (schema: Schema) => (
       );
     }
   } catch (e) {
-    res.handleHttpError(e);
+    if (res.handleHttpError) {
+      res.handleHttpError(e);
+    }
   }
 };
