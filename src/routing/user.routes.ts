@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import ValidationHandler from 'commons/middlewares/ValidationHandler';
-import { getUsersCtrl } from './user.controller';
-import createUserSchema from './user.validation';
+import { getUsersCtrl } from 'modules/user/user.controller';
+import createUserSchema from 'modules/user/user.validation';
 
 const usersRouter = Router();
 

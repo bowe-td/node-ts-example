@@ -21,8 +21,6 @@ export default (schema: Schema) => (
       );
     }
   } catch (e) {
-    if (res.handleHttpError) {
-      res.handleHttpError(e);
-    }
+    next(e);
   }
 };

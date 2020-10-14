@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import AuthController from '../controllers/AuthController';
+import ValidationHandler from 'commons/middlewares/ValidationHandler';
+import { authUser } from 'modules/auth/auth.controller';
+import authSchema from 'modules/auth/auth.validation';
 
 const authRouter = Router();
-const controller = new AuthController();
 
-authRouter.post('/', controller.authUser);
+authRouter.post('/', ValidationHandler(authSchema), authUser);
 
 export default authRouter;
