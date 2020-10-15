@@ -1,3 +1,3 @@
 import dotenv from 'dotenv';
 
-export default () => dotenv.config();
+export default (): dotenv.DotenvConfigOutput => dotenv.config();

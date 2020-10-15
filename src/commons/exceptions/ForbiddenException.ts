@@ -1,4 +1,4 @@
-import httpCodes from '../enum/http-codes';
+import httpCodes from 'commons/enum/http-codes';
 import CustomException from './CustomException';
 
 export default class ForbiddenException extends CustomException {
